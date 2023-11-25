@@ -1,0 +1,55 @@
+<div class="forma">
+    <form>
+        <label for="pocetnaDestinacija">Pocetna destinacija: </label>
+        <input type="text" name="pocetnaDestinacija" id="pocetnaDestinacija" #polazak /><br>
+
+        <label for="finalnaDestinacija">Finalna destinacija: </label>
+        <input type="text" name="finalnaDestinacija" id="finalnaDestinacija" #dolazak/><br>
+
+        <label for="avioKompanija">Avio kompanija: </label>
+        <input type="text" name="avioKompanija" id="avioKompanija" #avio/><br>
+
+        <label for="datumLeta">Datum leta: </label>
+        <input type="text" name="datumLeta" id="datumLeta" #date/><br>
+
+        <label for="satPolaska">Ocekivano vreme polaska: </label>
+        <input type="text" name="satPolaska" id="satPolaska" #satP><br>
+
+        <label for="satPolaska">Ocekivano vreme dolaska: </label>
+        <input type="text" name="satDolaska" id="satDolaska" #satD><br>
+
+        <button (click)="addFlights(polazak,dolazak,avio,satP,satD,date)">Dodaj let</button>
+    </form>
+
+</div>
+<br>
+<table>
+    <tr>
+        <th>Pocetna Destinacija</th>
+        <th>Finalna Destinacija</th>
+        <th>Avio kompanija</th>
+        <th>Datum leta</th>
+        <th>Ocekivano vreme polaska</th>
+        <th>Ocekivano vreme dolaska</th>
+    </tr>
+    <tr *ngFor="let flight of flights">
+        <td>
+            {{flight.pocetnaDestinacija}}
+        </td>
+        <td>
+            {{flight.finalnaDestinacija}}
+        </td>
+        <td>
+            {{flight.avioKompanija}}
+        </td>
+        <td>
+            {{flight.datumLeta}}
+        </td>
+        <td>
+            {{flight.satPolaska}}
+        </td>
+        <td>
+            {{flight.satDolaska}}
+        </td>
+    </tr>
+</table>

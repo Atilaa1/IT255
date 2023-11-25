@@ -1,0 +1,58 @@
+table {
+    width: 50%;
+    margin: auto;
+    border-collapse: collapse;
+    text-align: center;
+    th,
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    tr:hover {
+        background-color: #ddd;
+    }
+}
+
+.forma {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.forma label,
+.forma input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.forma input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.forma button {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.forma button:hover {
+    background-color: #45a049;
+}
