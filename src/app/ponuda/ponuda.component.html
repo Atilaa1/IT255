@@ -1,0 +1,17 @@
+<div class="ponuda">
+    <p>
+        Naša ponuda letova za Vas:
+    </p>
+    <ul id="ok" *ngFor="let flight of flight">
+        <li> Let:
+            <ul>
+                <li>Pocetna destinacija: {{flight.pocetnaDestinacija}} </li>
+                <li>Finalna destinacija: {{flight.finalnaDestinacija}} </li>
+                <li>Avio kompanija: {{flight.avioKompanija}} </li>
+                <li>Datum leta: {{flight.datumLeta}} </li>
+                <li>Sat polaska: {{flight.satPolaska}} </li>
+                <li>Sat dolaska: {{flight.satDolaska}} </li>
+            </ul>
+        </li>
+    </ul>
+</div>
