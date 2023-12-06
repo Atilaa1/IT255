@@ -1,24 +1,58 @@
 <div class="forma">
-    <form>
+    <form [formGroup]="angForm">
         <label for="pocetnaDestinacija">Pocetna destinacija: </label>
-        <input type="text" name="pocetnaDestinacija" id="pocetnaDestinacija" #polazak /><br>
+        <input type="text" name="pocetnaDestinacija" id="pocetnaDestinacija" #polazak formControlName="pocetnaDestinacija" [ngClass]="{error:getControl('pocetnaDestinacija')?.errors && getControl('pocetnaDestinacija')?.touched}" /><br>
+        <div *ngIf="getControl('pocetnaDestinacija')?.errors && getControl('pocetnaDestinacija')?.touched">
+            <p *ngIf="getControl('pocetnaDestinacija')?.errors?.['required'] ">Ovo polje je obavezno!!!</p>
+        </div>
 
         <label for="finalnaDestinacija">Finalna destinacija: </label>
-        <input type="text" name="finalnaDestinacija" id="finalnaDestinacija" #dolazak/><br>
+        <input type="text" name="finalnaDestinacija" id="finalnaDestinacija" #dolazak formControlName="finalnaDestinacija" [ngClass]="{error:getControl('finalnaDestinacija')?.errors && getControl('finalnaDestinacija')?.touched}" /><br>
+        <div *ngIf="getControl('finalnaDestinacija')?.errors && getControl('finalnaDestinacija')?.touched">
+            <p *ngIf="getControl('finalnaDestinacija')?.errors?.['required'] ">Ovo polje je obavezno!!!</p>
+        </div>
 
         <label for="avioKompanija">Avio kompanija: </label>
-        <input type="text" name="avioKompanija" id="avioKompanija" #avio/><br>
+        <input type="text" name="avioKompanija" id="avioKompanija" #avio formControlName="kompanija" [ngClass]="{error:getControl('kompanija')?.errors && getControl('kompanija')?.touched}" /><br>
+        <div *ngIf="getControl('kompanija')?.errors && getControl('kompanija')?.touched">
+            <p *ngIf="getControl('kompanija')?.errors?.['required'] ">Ovo polje je obavezno!!!</p>
+        </div>
 
         <label for="datumLeta">Datum leta: </label>
-        <input type="text" name="datumLeta" id="datumLeta" #date/><br>
+        <input type="text" name="datumLeta" id="datumLeta" #date formControlName="datum" [ngClass]="{error:getControl('datum')?.errors && getControl('datum')?.touched}" /><br>
+        <div *ngIf="getControl('datum')?.errors && getControl('datum')?.touched">
+            <p *ngIf="getControl('datum')?.errors?.['required'] ">Ovo polje je obavezno!!!</p>
+        </div>
 
         <label for="satPolaska">Ocekivano vreme polaska: </label>
-        <input type="text" name="satPolaska" id="satPolaska" #satP><br>
+        <input type="text" name="satPolaska" id="satPolaska" #satP formControlName="vremep" [ngClass]="{error:getControl('vremep')?.errors && getControl('vremep')?.touched}"><br>
+        <div *ngIf="getControl('vremep')?.errors && getControl('vremep')?.touched">
+            <p *ngIf="getControl('vremep')?.errors?.['required'] ">Ovo polje je obavezno!!!</p>
+        </div>
 
-        <label for="satPolaska">Ocekivano vreme dolaska: </label>
-        <input type="text" name="satDolaska" id="satDolaska" #satD><br>
+        <label for="sadDolaska">Ocekivano vreme dolaska: </label>
+        <input type="text" name="satDolaska" id="satDolaska" #satD formControlName="vremed" [ngClass]="{error:getControl('vremed')?.errors && getControl('vremed')?.touched}"><br>
+        <div *ngIf="getControl('vremed')?.errors && getControl('vremed')?.touched">
+            <p *ngIf="getControl('vremed')?.errors?.['required'] ">Ovo polje je obavezno!!!</p>
+            <p *ngIf="getControl('vremed')?.errors?.['minLength'] ">Unos mora biti veci od 5 karaktera</p>
+        </div>
+        <div>
 
-        <button (click)="addFlights(polazak,dolazak,avio,satP,satD,date)">Dodaj let</button>
+            <div>
+                <h2>Dodatne opcije</h2>
+                <label for="direktanLetCheck">Direktan let</label>
+                <input type="checkbox" id="direktanLetCheck" name="letCheck" value="direktanLet" (click)="povecajGratis(15000)">
+                <label for="biznisKlasaCheck">Biznis klasa</label>
+                <input type="checkbox" id="biznisKlasaCheck" name="letCheck" value="biznisKlasa" (click)="povecajGratis(10000)">
+                <label for="gratisHranaCheck">Gratis hrana</label>
+                <input type="checkbox" id="gratisHranaCheck" name="letCheck" value="gratisHrana" (click)="povecajGratis(4000)">
+
+            </div>
+            <p>Vasa cena je uvecana za {{ gratis }} dinara</p>
+        </div>
+
+
+        <button (click)=" addFlights(polazak,dolazak,avio,satP,satD,date)">Dodaj let</button>
     </form>
 
 </div>
@@ -32,7 +66,7 @@
         <th>Ocekivano vreme polaska</th>
         <th>Ocekivano vreme dolaska</th>
     </tr>
-    <tr *ngFor="let flight of flights">
+    <tr *ngFor="let flight of flights ">
         <td>
             {{flight.pocetnaDestinacija}}
         </td>

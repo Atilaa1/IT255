@@ -9,6 +9,7 @@ import { OnamaComponent } from './onama/onama.component';
 import { PreporukaComponent } from './preporuka/preporuka.component';
 import { PonudaComponent } from './ponuda/ponuda.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'ponuda', component: PonudaComponent },
@@ -29,7 +30,9 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
