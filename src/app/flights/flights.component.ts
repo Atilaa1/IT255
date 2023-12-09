@@ -16,8 +16,8 @@ export class FlightsComponent {
     finalnaDestinacija: new FormControl("", Validators.compose([Validators.required, Validators.minLength(6)])),
     kompanija: new FormControl("", Validators.compose([Validators.required, Validators.minLength(6)])),
     datum: new FormControl("", Validators.compose([Validators.required, Validators.minLength(6)])),
-    vremep: new FormControl("", Validators.compose([Validators.required, Validators.minLength(6)])),
-    vremed: new FormControl("", Validators.compose([Validators.required, Validators.minLength(6)])),
+    vremep: new FormControl("", Validators.compose([Validators.required, Validators.minLength(4)])),
+    vremed: new FormControl("", Validators.compose([Validators.required, Validators.minLength(4)])),
   });
   
 
