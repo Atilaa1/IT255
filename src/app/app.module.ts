@@ -8,18 +8,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OnamaComponent } from './onama/onama.component';
 import { PreporukaComponent } from './preporuka/preporuka.component';
 import { PonudaComponent } from './ponuda/ponuda.component';
-import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DIComponent } from './di/di.component';
 import { FlightserviceService } from './service/flightservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FlightCrudComponent } from './flight-crud/flight-crud.component';
-
-const routes: Routes = [
-  { path: 'ponuda', component: PonudaComponent },
-  { path: 'preporuka', component: PreporukaComponent },
-  { path: 'onama', component: OnamaComponent },
-];
 
 
 @NgModule({
@@ -34,7 +27,6 @@ const routes: Routes = [
     FlightCrudComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

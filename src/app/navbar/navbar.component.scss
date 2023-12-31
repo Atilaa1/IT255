@@ -1,5 +1,5 @@
 .navbar {
-    width: 100%;
+    width: 80%;
     margin: auto;
     text-align: center;
     font-size: 18px;
@@ -7,14 +7,16 @@
     color: white;
     padding-bottom: 20px;
     padding-top: 20px;
-    a {
-        color: forestgreen;
-        padding: 10px;
-        text-decoration: none;
-        font-size: 25px;
-        font-weight: bolder;
-        &:hover {
-            background-color: #54c459;
-        }
-    }
+}
+
+.navbar a {
+    color: forestgreen;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.navbar a:hover {
+    background-color: #54c459;
 }
