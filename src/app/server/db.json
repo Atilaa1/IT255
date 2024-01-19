@@ -1,26 +1,26 @@
 {
-  "flights": [
-    {
-      "id": 2,
-      "polazak": "Beograd",
-      "dolazak": "New York",
-      "vremePoletanja": "10:30AM"
-    },
-    {
-      "id": 3,
-      "polazak": "Budimpešta",
-      "dolazak": "Sid",
-      "vremePoletanja": "6:00PM"
-    },
-    {
-      "id": 4,
-      "polazak": "Beograd",
-      "dolazak": "Niš",
-      "vremePoletanja": "8:40PM"
+    "flights": [{
+            "id": 2,
+            "polazak": "Beograd",
+            "dolazak": "New York",
+            "vremePoletanja": "10:30AM"
+        },
+        {
+            "id": 3,
+            "polazak": "Budimpešta",
+            "dolazak": "Sid",
+            "vremePoletanja": "6:00PM"
+        },
+        {
+            "id": 4,
+            "polazak": "Beograd",
+            "dolazak": "Niš",
+            "vremePoletanja": "8:40PM"
+        }
+
+    ],
+    "comments": [],
+    "profile": {
+        "name": "typicode"
     }
-  ],
-  "comments": [],
-  "profile": {
-    "name": "typicode"
-  }
 }

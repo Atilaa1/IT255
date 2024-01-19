@@ -13,6 +13,7 @@ import { DIComponent } from './di/di.component';
 import { FlightserviceService } from './service/flightservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FlightCrudComponent } from './flight-crud/flight-crud.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FlightCrudComponent } from './flight-crud/flight-crud.component';
     PreporukaComponent,
     PonudaComponent,
     DIComponent,
-    FlightCrudComponent
+    FlightCrudComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,

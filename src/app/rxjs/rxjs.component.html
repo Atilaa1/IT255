@@ -1,0 +1,10 @@
+<div class="col-md-4" *ngFor="let flajt of flajts;index as i" style="margin: auto;">
+    <div class="card w-100">
+        <div class="card-body" style="text-align: center;">
+            <h5 class="card-title">Id leta: {{flajt.id}}</h5>
+            <p class="card-text">Polazna destinacija: {{flajt.polazak}}</p>
+            <p class="card-text">Finalna detinacija: {{flajt.dolazak}}</p>
+            <p class="card-text">Vreme poletanja: {{flajt.vremePoletanja}}</p>
+        </div>
+    </div>
+</div>
