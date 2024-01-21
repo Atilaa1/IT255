@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <h3 style="text-align: center;">Lista Rezervacija</h3>
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID leta</th>
+                <th>Polazak</th>
+                <th>Dolazak</th>
+                <th>Vreme Poletanja</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let flight of (rezervacijeUnosi$ | async)">
+                <td>{{flight.id}}</td>
+                <td>{{flight.polazak}}</td>
+                <td>{{flight.dolazak}}</td>
+                <td>{{flight.vremePoletanja}}</td>
+                <td>
+                    <button (click)="izbrisiRezervaciju(flight)" class="btn btn-danger" type="button">Izbriši</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

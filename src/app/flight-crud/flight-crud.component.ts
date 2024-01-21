@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms'; 
 import { ApiService } from '../shared/api.service';
 import { FlightCrudModel } from './flight-crud.model';
+import { Store } from '@ngrx/store';
+import { addReservation } from '../state/flight.actions';
 
 @Component({
   selector: 'app-flight-crud',
@@ -16,7 +18,7 @@ export class FlightCrudComponent implements OnInit{
   showAdd!: boolean;
   showUpdate!: boolean;
 
-  constructor(private formBuilder : FormBuilder, private api : ApiService){
+  constructor(private formBuilder : FormBuilder, private api : ApiService, private store:Store){
   }
 
   ngOnInit(): void {
@@ -87,6 +89,10 @@ export class FlightCrudComponent implements OnInit{
       this.formValue.reset();
       this.getAllFlights();
     })
+  }
+  rezervisiSediste(flight: FlightCrudModel){
+    alert("Rezervisano!");
+    this.store.dispatch(addReservation(flight));
   }
 
 }

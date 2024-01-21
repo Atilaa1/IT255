@@ -14,6 +14,9 @@ import { FlightserviceService } from './service/flightservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FlightCrudComponent } from './flight-crud/flight-crud.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { RezervacijaLetovaComponent } from './rezervacija-letova/rezervacija-letova.component';
+import { Store, StoreModule } from '@ngrx/store';
+import { flightReducer, metaReducerLocalStorage } from './state/flight.reducer';
 
 
 @NgModule({
@@ -26,14 +29,16 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     PonudaComponent,
     DIComponent,
     FlightCrudComponent,
-    RxjsComponent
+    RxjsComponent,
+    RezervacijaLetovaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({rezervacijeUnosi: flightReducer}, {metaReducers: [metaReducerLocalStorage]})
   ],
   providers: [FlightserviceService],
   bootstrap: [AppComponent]
